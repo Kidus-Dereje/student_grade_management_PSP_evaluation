@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Grade Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Student Grade Management System</h1>
+      <p class="subtitle">Enter subject marks (0–100) to view live letter grades and compute your GPA.</p>
+    </header>
+
+    <main class="card">
+      <section class="slots-section" aria-labelledby="slots-heading">
+        <div class="section-header">
+          <h2 id="slots-heading">Subject Marks</h2>
+          <button type="button" id="add-slot-btn" class="btn btn-secondary" aria-label="Add Subject Slot">
+            <span class="btn-icon" aria-hidden="true">+</span> Add Subject
+          </button>
+        </div>
+
+        <div id="slots-container" class="slots-list" role="list">
+          <!-- Dynamically populated slots -->
+        </div>
+      </section>
+
+      <section class="actions-section">
+        <button type="button" id="calculate-btn" class="btn btn-primary btn-large" disabled>
+          Calculate Results
+        </button>
+        <p id="calc-hint" class="calc-hint" aria-live="polite">
+          Please fill in all subject marks to calculate.
+        </p>
+      </section>
+
+      <section id="results-panel" class="results-section" aria-live="polite" hidden>
+        <h2 class="results-title">Calculation Summary</h2>
+        <div class="results-grid">
+          <div class="result-card">
+            <span class="result-label">Average Mark</span>
+            <span id="result-average" class="result-value">—</span>
+          </div>
+          <div class="result-card highlight">
+            <span class="result-label">Overall Grade</span>
+            <span id="result-letter" class="result-value grade-display">—</span>
+          </div>
+          <div class="result-card">
+            <span class="result-label">Cumulative GPA (4.0)</span>
+            <span id="result-gpa" class="result-value">—</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>School Process Improvement Project &bull; Unweighted GPA &bull; No Data Saved on Refresh</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
